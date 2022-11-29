@@ -7,6 +7,11 @@
   </div>
 </template>
 
+<script setup>
+import usePageRequests from './composables/usePageRequests'
+const { isLoading } = usePageRequests()
+</script>
+
 <script setup></script>
 <style lang="css">
 .container {

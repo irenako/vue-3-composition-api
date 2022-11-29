@@ -1,8 +1,8 @@
-import {reactive, computed} from 'vue'
+import { reactive, computed } from 'vue'
 const activeRequests = reactive([])
-export default function usePageRequests(){
-  const isLoading = computed(()=> !!activeRequests.length)
-  const makeRequest = async (url) =>{
+export default function usePageRequests() {
+  const isLoading = computed(() => !!activeRequests.length)
+  const makeRequest = async (url) => {
     // push the url to the activeRequests
     const index = activeRequests.length
     activeRequests[index] = url
@@ -13,5 +13,5 @@ export default function usePageRequests(){
     activeRequests.splice(index, 1)
     return data
   }
-  return {isLoading, makeRequest}
+  return { isLoading, makeRequest }
 }
